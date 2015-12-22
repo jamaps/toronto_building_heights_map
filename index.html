@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+  	<link rel="icon" type="image/png" href="favicon.png" />
+  	<title>Toronto Building Heights</title>
+  	<meta charset="utf-8"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+</head>
+
+<body>
+
+<style>
+* {
+    margin:0;
+    padding:0;
+}
+.all #map {
+  width: full;
+  height: 100vh;
+}
+.all .over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+</style>
+
+<div class="all">
+  <div id="map"></div>
+  <div class="over">
+    <img src=legend.png />
+</div>
+</div>
+
+<script>
+
+var SW = new L.latLng(-45, -92),
+    NE = new L.latLng(45, 92),
+    b = new L.latLngBounds(SW, NE);
+
+var map = L.map('map',{
+  zoomControl:false,
+  attributionControl:false,
+  maxBounds: b
+  }).setView([-20, -15], 5);
+
+        L.tileLayer('tor_buildings_map/{z}/{x}/{y}.png', {
+            minZoom: 4,
+            maxZoom: 7,
+            tms: true,
+            noWrap: false,
+            attribution: 'circa 2015 | <a href="https://github.com/jamaps/toronto_building_heights_map" target="_blank"><b>About This Map</b></a> | <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" >CC BY-NC-SA 4.0</a>'
+        }).addTo(map);
+
+        L.control.attribution( {
+          prefix: false,
+          position:	'bottomright'
+        } ).addTo(map);
+
+        L.control.zoom( {
+          position:	'topright',
+        } ).addTo(map);
+
+</script>
+
+</body>
+
+</html>
