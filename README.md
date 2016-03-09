@@ -6,3 +6,4 @@ Built from building massing data from Open Data Toronto and roads from OpenStree
 
 Designed in QGIS, converted into web tiles with gdal2tiles.py, and displayed with Leaflet.
 
+_ Jeff Allen (2015)
