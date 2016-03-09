@@ -1,8 +1,8 @@
-#### toronto_building_heights_map
+#### Map of building heights in Toronto:
 
 http://jamaps.github.io/toronto_building_heights_map/
 
-Map uses data building massing data from Open Data Toronto and roads from OpenStreetMap retrieved in November, 2015 
+Built from building massing data from Open Data Toronto and roads from OpenStreetMap 
 
-Map was designed in QGIS, converted into web tiles with gdal2tiles.py, and displayed with Leaflet.
+Designed in QGIS, converted into web tiles with gdal2tiles.py, and displayed with Leaflet.
 
